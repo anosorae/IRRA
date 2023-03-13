@@ -71,3 +71,6 @@ python test.py --config_file 'logs/CUHK-PEDES/iira/configs.yaml'
 
 ## Citation
 If you find this code useful for your research, please cite our paper
+
+## Contact
+If you have any question, please feel free to contact us. E-mail: jiangding@whu.edu.cn , yemang@whu.edu.cn

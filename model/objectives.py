@@ -71,24 +71,15 @@ def compute_itc(image_features, text_features, logit_scale):
     return loss
 
 
-def compute_id(classifier, image_embeddings, text_embeddings, labels, verbose=False):
-    image_logits = classifier(image_embeddings)
-    text_logits = classifier(text_embeddings)
-
+def compute_id(image_logits, text_logits, labels):
+    """
+    Instance loss proposed at http://arxiv.org/abs/1711.05535
+    """
     criterion = nn.CrossEntropyLoss(reduction="mean")
+
     loss = criterion(image_logits, labels) + criterion(text_logits, labels)
-
-    # classification accuracy for observation
-    if verbose:
-        image_pred = torch.argmax(image_logits, dim=1)
-        text_pred = torch.argmax(text_logits, dim=1)
-
-        image_precision = torch.mean((image_pred == labels).float())
-        text_precision = torch.mean((text_pred == labels).float())
-
-        return loss, image_precision, text_precision
     
-    return loss
+    return loss / 2
 
 
 def compute_cmpm(image_embeddings, text_embeddings, labels, epsilon=1e-8):

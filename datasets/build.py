@@ -72,7 +72,7 @@ def build_dataloader(args, tranforms=None):
     logger = logging.getLogger("IRRA.dataset")
 
     num_workers = args.num_workers
-    dataset = __factory[args.dataset_name](root=args.root_dir, nlp_aug=args.nlp_aug)
+    dataset = __factory[args.dataset_name](root=args.root_dir)
 
     if args.training:
         train_transforms = build_transforms(img_size=args.img_size,

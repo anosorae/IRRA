@@ -138,7 +138,7 @@ class IRRA(nn.Module):
             pred = scores.max(1)[1]
             mlm_label_idx = torch.nonzero(mlm_labels)
             acc = (pred[mlm_label_idx] == mlm_labels[mlm_label_idx]).float().mean()
-            ret.update({'acc': acc})
+            ret.update({'mlm_acc': acc})
 
         return ret
 

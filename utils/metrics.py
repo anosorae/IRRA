@@ -90,9 +90,12 @@ class Evaluator():
             i2t_cmc, i2t_mAP, i2t_mINP, _ = rank(similarity=similarity.t(), q_pids=gids, g_pids=qids, max_rank=10, get_mAP=True)
             i2t_cmc, i2t_mAP, i2t_mINP = i2t_cmc.cpu().numpy(), i2t_mAP.cpu().numpy(), i2t_mINP.cpu().numpy()
             table.add_row(['i2t', i2t_cmc[0], i2t_cmc[4], i2t_cmc[9], i2t_mAP, i2t_mINP])
-        table.float_format = '.4'
+        # table.float_format = '.4'
+        table.custom_format["R1"] = lambda f, v: f"{v:.3f}"
+        table.custom_format["R5"] = lambda f, v: f"{v:.3f}"
+        table.custom_format["R10"] = lambda f, v: f"{v:.3f}"
+        table.custom_format["mAP"] = lambda f, v: f"{v:.3f}"
+        table.custom_format["mINP"] = lambda f, v: f"{v:.3f}"
         self.logger.info('\n' + str(table))
         
         return t2i_cmc[0]
-
-

@@ -42,7 +42,7 @@ Organize them in `your dataset root dir` folder as follows:
 
 ```python
 python train.py \
---name iira \
+--name irra \
 --img_aug \
 --batch_size 64 \
 --MLM \

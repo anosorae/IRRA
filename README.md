@@ -2,8 +2,14 @@
 
 Official PyTorch implementation of the paper [Cross-Modal Implicit Relation Reasoning and Aligning for Text-to-Image Person Retrieval]() (CVPR 2023)
 
+## Highlights
 
-## Installation
+The goal of this work is to enhance global text-to-image person retrieval performance,  without requiring any additional supervision and inference cost. To achieve this, we utilize the full CLIP model as our feature extraction backbone. Additionally, we propose a novel cross-modal matching loss (SDM) and an Implicit Relation Reasoning module to mine fine-grained image-text relationships, enabling IRRA to learn more discriminative global image-text representations.
+
+![](images/arch_overview.png)
+
+
+## Usage
 ### Requirements
 we use single RTX3090 24G GPU for training and evaluation. 
 ```
@@ -42,7 +48,7 @@ Organize them in `your dataset root dir` folder as follows:
 
 ```python
 python train.py \
---name irra \
+--name iira \
 --img_aug \
 --batch_size 64 \
 --MLM \
@@ -55,22 +61,64 @@ python train.py \
 ## Testing
 
 ```python
-python test.py --config_file 'logs/CUHK-PEDES/iira/configs.yaml'
+python test.py --config_file 'path/to/model_dir/configs.yaml'
 ```
 
-## Results
-### Performance comparisons with state-of-the-art methods on CUHK-PEDES dataset.
-<!-- ![tab1](images/compare_cuhkpedes.png) -->
-<img src=images/compare_cuhkpedes.png width=70% />
+## IRRA on Text-to-Image Person Retrieval Results
+#### CUHK-PEDES dataset
 
-### Performance comparisons with state-of-the-art methods on ICFG-PEDES dataset.
-![tab2](images/compare_icfgpedes.png)
+|     Method      |     Backbone     |  Rank-1   |  Rank-5   |  Rank-10  |    mAP    |   mINP    |
+| :-------------: | :--------------: | :-------: | :-------: | :-------: | :-------: | :-------: |
+|     CMPM/C      |    RN50/LSTM     |   49.37   |     -     |   79.27   |     -     |     -     |
+|      DSSL       |    RN50/BERT     |   59.98   |   80.41   |   87.56   |           |           |
+|      SSAN       |    RN50/LSTM     |   61.37   |   80.15   |   86.73   |           |           |
+|   Han et al.    |  RN101/Xformer   |   64.08   |   81.73   |   88.19   |   60.08   |           |
+|      LGUR       | DeiT-Small/BERT  |   65.25   |   83.12   |   89.00   |           |           |
+|       IVT       |  ViT-B-16/BERT   |   65.59   |   83.11   |   89.21   |           |           |
+|      CFine      |  ViT-B-16/BERT   |   69.57   |   85.93   |   91.15   |     -     |     -     |
+|    **CLIP**     | ViT-B-16/Xformer |   68.19   |   86.47   |   91.47   |   61.12   |   44.86   |
+| **IRRA (ours)** | ViT-B-16/Xformer | **73.38** | **89.93** | **93.71** | **66.13** | **50.24** |
 
-### Performance comparisons with state-of-the-art methods on RSTPReid dataset.
-![tab3](images/compare_rstpreid.png)
+[Model & log for CUHK-PEDES]()
+
+#### ICFG-PEDES dataset
+
+|     Method      |  Rank-1   |  Rank-5   |  Rank-10  |    mAP    |   mINP   |
+| :-------------: | :-------: | :-------: | :-------: | :-------: | :------: |
+|     CMPM/C      |   43.51   |   65.44   |   74.26   |     -     |    -     |
+|      SSAN       |   54.23   |   72.63   |   79.53   |     -     |    -     |
+|       IVT       |   56.04   |   73.60   |   80.22   |     -     |    -     |
+|      CFine      |   60.83   |   76.55   |   82.42   |     -     |    -     |
+|    **CLIP**     |   56.74   |   75.72   |   82.26   |   31.84   |   5.03   |
+| **IRRA (ours)** | **63.46** | **80.24** | **85.82** | **38.05** | **7.92** |
+
+[Model & log for ICFG-PEDES]()
+
+#### RSTPReid dataset
+
+|     Method      |  Rank-1   |  Rank-5   |  Rank-10  |    mAP    |   mINP    |
+| :-------------: | :-------: | :-------: | :-------: | :-------: | :-------: |
+|      DSSL       |   39.05   |   62.60   |   73.95   |     -     |     -     |
+|      SSAN       |   43.50   |   67.80   |   77.15   |     -     |     -     |
+|       IVT       |   46.70   |   70.00   |   78.80   |     -     |     -     |
+|      CFine      |   50.55   |   72.50   |   81.60   |     -     |     -     |
+|    **CLIP**     |   54.05   |   80.70   |   88.00   |   43.41   |   22.31   |
+| **IRRA (ours)** | **59.80** | **82.50** | **89.20** | **47.81** | **26.32** |
+
+[Model & log for RSTPReid]()
 
 ## Citation
 If you find this code useful for your research, please cite our paper
 
+```tex
+@inproceedings{cvpr23cross,
+  title={Cross-Modal Implicit Relation Reasoning and Aligning for Text-to-Image Person Retrieval},
+  author={Jiang, Ding and Ye, Mang},
+  booktitle={IEEE International Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2023},
+}
+```
+
 ## Contact
-If you have any question, please feel free to contact us. E-mail: jiangding@whu.edu.cn , yemang@whu.edu.cn
+
+If you have any question, please feel free to contact us. E-mail: [jiangding@whu.edu.cn](mailto:jiangding@whu.edu.cn) , [yemang@whu.edu.cn](mailto:yemang@whu.edu.cn)

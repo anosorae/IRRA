@@ -79,7 +79,7 @@ python test.py --config_file 'path/to/model_dir/configs.yaml'
 |    **CLIP**     | ViT-B-16/Xformer |   68.19   |   86.47   |   91.47   |   61.12   |   44.86   |
 | **IRRA (ours)** | ViT-B-16/Xformer | **73.38** | **89.93** | **93.71** | **66.13** | **50.24** |
 
-[Model & log for CUHK-PEDES]()
+[Model & log for CUHK-PEDES](https://drive.google.com/file/d/1OBhFhpZpltRMZ88K6ceNUv4vZgevsFCW/view?usp=share_link)
 
 #### ICFG-PEDES dataset
 
@@ -92,7 +92,7 @@ python test.py --config_file 'path/to/model_dir/configs.yaml'
 |    **CLIP**     |   56.74   |   75.72   |   82.26   |   31.84   |   5.03   |
 | **IRRA (ours)** | **63.46** | **80.24** | **85.82** | **38.05** | **7.92** |
 
-[Model & log for ICFG-PEDES]()
+[Model & log for ICFG-PEDES](https://drive.google.com/file/d/1Y3D7zZsKPpuEHWJ9nVecUW-HaKdjDI9g/view?usp=share_link)
 
 #### RSTPReid dataset
 
@@ -103,9 +103,9 @@ python test.py --config_file 'path/to/model_dir/configs.yaml'
 |       IVT       |   46.70   |   70.00   |   78.80   |     -     |     -     |
 |      CFine      |   50.55   |   72.50   |   81.60   |     -     |     -     |
 |    **CLIP**     |   54.05   |   80.70   |   88.00   |   43.41   |   22.31   |
-| **IRRA (ours)** | **59.80** | **82.50** | **89.20** | **47.81** | **26.32** |
+| **IRRA (ours)** | **60.20** | **81.30** | **88.20** | **47.17** | **25.28** |
 
-[Model & log for RSTPReid]()
+[Model & log for RSTPReid](https://drive.google.com/file/d/1LpUHkLErEWkJiXyWYxWwiK-8Fz1_1QGY/view?usp=share_link)
 
 ## Citation
 If you find this code useful for your research, please cite our paper

@@ -55,8 +55,8 @@ def get_args():
     parser.add_argument("--warmup_factor", type=float, default=0.1)
     parser.add_argument("--warmup_epochs", type=int, default=5)
     parser.add_argument("--warmup_method", type=str, default="linear")
-    parser.add_argument("--lrscheduler", type=str, default="step")
-    parser.add_argument("--target_lr", type=float, default=1e-8)
+    parser.add_argument("--lrscheduler", type=str, default="cosine")
+    parser.add_argument("--target_lr", type=float, default=0)
     parser.add_argument("--power", type=float, default=0.9)
 
     ######################## dataset ########################

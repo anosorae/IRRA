@@ -1,4 +1,5 @@
 #!/bin/bash
+DATASET_NAME="CUHK-PEDES"
 
 CUDA_VISIBLE_DEVICES=0 \
 python train.py \
@@ -6,7 +7,6 @@ python train.py \
 --img_aug \
 --batch_size 64 \
 --MLM \
+--dataset_name $DATASET_NAME \
 --loss_names 'sdm+mlm+id' \
---lrscheduler 'cosine' \
---target_lr 0 \
 --num_epoch 60

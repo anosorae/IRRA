@@ -1,4 +1,5 @@
 # Cross-Modal Implicit Relation Reasoning and Aligning for Text-to-Image Person Retrieval
+![GitHub](https://img.shields.io/github/license/anosorae/IRRA)
 
 Official PyTorch implementation of the paper [Cross-Modal Implicit Relation Reasoning and Aligning for Text-to-Image Person Retrieval]() (CVPR 2023)
 
@@ -124,6 +125,9 @@ If you find this code useful for your research, please cite our paper
 }
 ```
 
-## Contact
+## Acknowledgments
+Some components of this code implementation are adopted from [CLIP](https://github.com/openai/CLIP), [TextReID](https://github.com/BrandonHanx/TextReID) and [TransReID](https://github.com/damo-cv/TransReID). We sincerely appreciate for their contributions.
 
-If you have any question, please feel free to contact us. E-mail: [jiangding@whu.edu.cn](mailto:jiangding@whu.edu.cn) , [yemang@whu.edu.cn](mailto:yemang@whu.edu.cn)
+
+## Contact
+If you have any question, please feel free to contact us. E-mail: [jiangding@whu.edu.cn](mailto:jiangding@whu.edu.cn), [yemang@whu.edu.cn](mailto:yemang@whu.edu.cn).

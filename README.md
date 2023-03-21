@@ -1,16 +1,16 @@
 # Cross-Modal Implicit Relation Reasoning and Aligning for Text-to-Image Person Retrieval
-![GitHub](https://img.shields.io/github/license/anosorae/IRRA)
+[![GitHub](https://img.shields.io/badge/license-MIT-green)](https://github.com/anosorae/IRRA/blob/main/LICENSE)
 
 Official PyTorch implementation of the paper [Cross-Modal Implicit Relation Reasoning and Aligning for Text-to-Image Person Retrieval]() (CVPR 2023)
 
 ## Updates
-- (3/18/2023) Add download link of trained models and logs.
+- (3/18/2023) Add download links of trained models and logs.
 - (3/17/2023) Ensure the reproducibility of our code.
 - (3/13/2023) Code released!
 
 ## Highlights
 
-The goal of this work is to enhance global text-to-image person retrieval performance,  without requiring any additional supervision and inference cost. To achieve this, we utilize the full CLIP model as our feature extraction backbone. Additionally, we propose a novel cross-modal matching loss (SDM) and an Implicit Relation Reasoning module to mine fine-grained image-text relationships, enabling IRRA to learn more discriminative global image-text representations.
+The goal of this work is to enhance global text-to-image person retrieval performance, without requiring any additional supervision and inference cost. To achieve this, we utilize the full CLIP model as our feature extraction backbone. Additionally, we propose a novel cross-modal matching loss (SDM) and an Implicit Relation Reasoning module to mine fine-grained image-text relationships, enabling IRRA to learn more discriminative global image-text representations.
 
 ![](images/arch_overview.png)
 
@@ -114,7 +114,7 @@ python test.py --config_file 'path/to/model_dir/configs.yaml'
 [Model & log for RSTPReid](https://drive.google.com/file/d/1LpUHkLErEWkJiXyWYxWwiK-8Fz1_1QGY/view?usp=share_link)
 
 ## Citation
-If you find this code useful for your research, please cite our paper
+If you find this code useful for your research, please cite our paper.
 
 ```tex
 @inproceedings{cvpr23cross,

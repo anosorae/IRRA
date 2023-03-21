@@ -133,7 +133,7 @@ class IRRA(nn.Module):
 
             scores = x.float().reshape(-1, self.args.vocab_size)
             mlm_labels = batch['mlm_labels'].reshape(-1)
-            ret.update({'mlm_loss': objectives.compute_mcm_or_mlm(scores, mlm_labels)*self.args.mlm_loss_weight})
+            ret.update({'mlm_loss': objectives.compute_mlm(scores, mlm_labels)*self.args.mlm_loss_weight})
 
             pred = scores.max(1)[1]
             mlm_label_idx = torch.nonzero(mlm_labels)

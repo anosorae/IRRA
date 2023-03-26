@@ -1,9 +1,10 @@
 # Cross-Modal Implicit Relation Reasoning and Aligning for Text-to-Image Person Retrieval
 [![GitHub](https://img.shields.io/badge/license-MIT-green)](https://github.com/anosorae/IRRA/blob/main/LICENSE) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/cross-modal-implicit-relation-reasoning-and/nlp-based-person-retrival-on-cuhk-pedes)](https://paperswithcode.com/sota/nlp-based-person-retrival-on-cuhk-pedes?p=cross-modal-implicit-relation-reasoning-and)
 
-Official PyTorch implementation of the paper [Cross-Modal Implicit Relation Reasoning and Aligning for Text-to-Image Person Retrieval](https://arxiv.org/abs/2303.12501) (CVPR 2023)
+Official PyTorch implementation of the paper Cross-Modal Implicit Relation Reasoning and Aligning for Text-to-Image Person Retrieval (CVPR 2023)
 
 ## Updates
+- (3/26/2023) **Temporary withdrawal paper from arXiv for patenting, you can request the paper by email.**
 - (3/23/2023) Add arXiv link for our paper.
 - (3/18/2023) Add download links of trained models and logs.
 - (3/17/2023) Ensure the reproducibility of our code.

@@ -97,7 +97,8 @@ def do_train(start_epoch, args, model, train_loader, evaluator, optimizer,
                 logger.info("Validation Results - Epoch: {}".format(epoch))
                 if args.distributed:
                     top1 = evaluator.eval(model.module.eval())
-                top1 = evaluator.eval(model.eval())
+                else:
+                    top1 = evaluator.eval(model.eval())
 
                 torch.cuda.empty_cache()
                 if best_top1 < top1:

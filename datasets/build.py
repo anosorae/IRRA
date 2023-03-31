@@ -167,4 +167,4 @@ def build_dataloader(args, tranforms=None):
                                      batch_size=args.test_batch_size,
                                      shuffle=False,
                                      num_workers=num_workers)
-        return test_img_loader, test_txt_loader
+        return test_img_loader, test_txt_loader, num_classes

@@ -27,8 +27,8 @@ if __name__ == '__main__':
     logger.info(args)
     device = "cuda"
 
-    test_img_loader, test_txt_loader = build_dataloader(args)
-    model = build_model(args)
+    test_img_loader, test_txt_loader, num_classes = build_dataloader(args)
+    model = build_model(args, num_classes=num_classes)
     checkpointer = Checkpointer(model)
     checkpointer.load(f=op.join(args.output_dir, 'best.pth'))
     model.to(device)

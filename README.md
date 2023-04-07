@@ -114,6 +114,11 @@ python test.py --config_file 'path/to/model_dir/configs.yaml'
 
 [Model & log for RSTPReid](https://drive.google.com/file/d/1LpUHkLErEWkJiXyWYxWwiK-8Fz1_1QGY/view?usp=share_link)
 
+
+## Acknowledgments
+Some components of this code implementation are adopted from [CLIP](https://github.com/openai/CLIP), [TextReID](https://github.com/BrandonHanx/TextReID) and [TransReID](https://github.com/damo-cv/TransReID). We sincerely appreciate for their contributions.
+
+
 ## Citation
 If you find this code useful for your research, please cite our paper.
 
@@ -125,10 +130,6 @@ If you find this code useful for your research, please cite our paper.
   year={2023},
 }
 ```
-
-## Acknowledgments
-Some components of this code implementation are adopted from [CLIP](https://github.com/openai/CLIP), [TextReID](https://github.com/BrandonHanx/TextReID) and [TransReID](https://github.com/damo-cv/TransReID). We sincerely appreciate for their contributions.
-
 
 ## Contact
 If you have any question, please feel free to contact us. E-mail: [jiangding@whu.edu.cn](mailto:jiangding@whu.edu.cn), [yemang@whu.edu.cn](mailto:yemang@whu.edu.cn).

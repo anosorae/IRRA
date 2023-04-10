@@ -14,7 +14,7 @@ def rank(similarity, q_pids, g_pids, max_rank=10, get_mAP=True):
         _, indices = torch.topk(
             similarity, k=max_rank, dim=1, largest=True, sorted=True
         )  # q * topk
-    pred_labels = g_pids[indices]  # q * k
+    pred_labels = g_pids[indices.cpu()]  # q * k
     matches = pred_labels.eq(q_pids.view(-1, 1))  # q * k
 
     all_cmc = matches[:, :max_rank].cumsum(1) # cumulative sum

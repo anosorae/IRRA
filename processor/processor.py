@@ -50,8 +50,6 @@ def do_train(start_epoch, args, model, train_loader, evaluator, optimizer,
             ret = model(batch)
             total_loss = sum([v for k, v in ret.items() if "loss" in k])
 
-            total_loss = sum([v for k, v in ret.items() if "loss" in k])
-
             batch_size = batch['images'].shape[0]
             meters['loss'].update(total_loss.item(), batch_size)
             meters['sdm_loss'].update(ret.get('sdm_loss', 0), batch_size)

@@ -3,7 +3,7 @@ DATASET_NAME="CUHK-PEDES"
 
 CUDA_VISIBLE_DEVICES=0 \
 python train.py \
---name iira \
+--name irra \
 --img_aug \
 --batch_size 64 \
 --MLM \
